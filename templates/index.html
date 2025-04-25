@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Main Page
+{% endblock %}
+
+<style>
+  .custom-highlight-border {
+    border: 4px solid #ffc107;
+    border-radius: 12px;
+    background-color: #f8f9fa; /* светлый фон, чтобы контент читался хорошо */
+  }
+  h1, h3 {
+    color: #000;
+  }
+</style>
+
+{% block content %} 
+<div class="container mt-5">
+  <div class="custom-highlight-border position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+    <div class="col-md-6 p-lg-5 mx-auto my-5">
+      <h1 class="display-3 fw-bold">Cook with What You Have</h1>
+      <h3 class="fw-normal text-muted mb-3">Cook anything you want with us</h3>
+
+      <!-- Форма поиска -->
+      <form action="{{ url_for('search_recipes') }}" method="POST" class="mt-4">
+        <div class="input-group">
+          <input type="text" name="query" class="form-control" placeholder="Enter ingredients (e.g. tomato, cheese)" required>
+          <button type="submit" class="btn btn-primary">Search Recipes</button>
+        </div>
+      </form>
+    </div>
+    
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Recipe{% endblock %}
+
+{% block content %}
+<div class="container col-md-8 mt-5">
+    <div class="card shadow-lg p-4 rounded-4">
+        <h2 class="mb-4 text-center text-primary">Add a New Recipe</h2>
+        <form method="post" action="/add_recipe">
+            <div class="mb-3">
+                <label for="name" class="form-label">Recipe Name</label>
+                <input type="text" name="name" id="name" class="form-control" required placeholder="E.g. Pasta Carbonara">
+            </div>
+            <div class="mb-3">
+                <label for="ingredients" class="form-label">Ingredients (comma separated)</label>
+                <textarea name="ingredients" id="ingredients" rows="3" class="form-control" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="instructions" class="form-label">Instructions</label>
+                <textarea name="instructions" id="instructions" rows="4" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning w-100">Save Recipe</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

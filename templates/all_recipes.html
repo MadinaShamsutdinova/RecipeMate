@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}All Recipes{% endblock %}
+
+{% block content %}
+    <h2>All Recipes</h2>
+    {% if recipes %}
+        <div class="list-group">
+            {% for recipe in recipes %}
+                <div class="list-group-item">
+                    <h5>{{ recipe.name }}</h5>
+                    <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+                    <p><strong>Instructions:</strong> {{ recipe.instructions }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No recipes found.</p>
+    {% endif %}
+{% endblock %}
